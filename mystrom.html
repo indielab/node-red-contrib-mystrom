@@ -1,0 +1,123 @@
+<script type="text/javascript">
+	RED.nodes.registerType('mystrom-on',{
+		category: 'MyStrom',
+		color: '#5EB32E',
+		defaults: {
+			name: {value:""},
+			server : {value:"", type: "mystrom-config" }
+		},
+		inputs:1,
+		outputs:0,
+		icon: "mystrom.png",
+		label: function() {
+			return this.name||"MyStrom On";
+		}
+	});
+</script>
+
+<script type="text/x-red" data-template-name="mystrom-on">
+	<div class="form-row">
+		<label for="node-input-server"><i class="icon-bookmark"></i> Host</label>
+		<input type="text" id="node-input-server">
+	</div>	
+	<div class="form-row">
+		<label for="node-input-name"><i class="icon-tag"></i> Name</label>
+		<input type="text" id="node-input-name" placeholder="Name">
+		</div>
+</script>
+
+<script type="text/x-red" data-help-name="mystrom-on">
+    <p>Toggle MyStrom Switch On</p>
+</script>
+
+<script type="text/javascript">
+	RED.nodes.registerType('mystrom-off',{
+		category: 'MyStrom',
+		color: '#5EB32E',
+		defaults: {
+			name: {value:""},
+			server : {value:"", type: "mystrom-config" }
+		},
+		inputs:1,
+		outputs:0,
+		icon: "mystrom.png",
+		label: function() {
+			return this.name||"MyStrom Off";
+		}
+	});
+</script>
+
+<script type="text/x-red" data-template-name="mystrom-off">
+	<div class="form-row">
+		<label for="node-input-server"><i class="icon-bookmark"></i> Host</label>
+		<input type="text" id="node-input-server">
+	</div>	
+	<div class="form-row">
+		<label for="node-input-name"><i class="icon-tag"></i> Name</label>
+		<input type="text" id="node-input-name" placeholder="Name">
+		</div>
+</script>
+
+<script type="text/x-red" data-help-name="mystrom-on">
+    <p>Toggle MyStrom Switch Off</p>
+</script>
+
+
+
+<script type="text/javascript">
+	RED.nodes.registerType('mystrom-state',{
+		category: 'MyStrom',
+		color: '#5EB32E',
+		defaults: {
+			name: {value:""},
+			server : {value:"", type: "mystrom-config" }
+		},
+		inputs:1,
+		outputs:1,
+		icon: "mystrom.png",
+		label: function() {
+			return this.name||"MyStrom State";
+		}
+	});
+</script>
+
+<script type="text/x-red" data-template-name="mystrom-state">
+	<div class="form-row">
+		<label for="node-input-server"><i class="icon-bookmark"></i> Host</label>
+		<input type="text" id="node-input-server">
+	</div>	
+	<div class="form-row">
+		<label for="node-input-name"><i class="icon-tag"></i> Name</label>
+		<input type="text" id="node-input-name" placeholder="Name">
+		</div>
+</script>
+
+<script type="text/x-red" data-help-name="mystrom-state">
+    <p>Toggle MyStrom Switch On</p>
+</script>
+
+
+
+<script type="text/javascript">
+    RED.nodes.registerType('mystrom-config',{
+        category: 'config',
+        defaults: {
+            host: {value:"localhost",required:true},
+            name : {value : "MyStrom Switch", required: true}
+        },
+        label: function() {
+            return this.name + ' (' + this.host + ')';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="mystrom-config">
+	<div class="form-row">
+		<label for="node-config-input-name"><i class="icon-tag"></i> Host</label>
+		<input type="text" id="node-config-input-name">
+	</div>
+	<div class="form-row">
+		<label for="node-config-input-host"><i class="icon-bookmark"></i> Host</label>
+		<input type="text" id="node-config-input-host">
+	</div>
+</script>
